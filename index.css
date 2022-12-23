@@ -6,6 +6,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: black;
 }
 
 #main{
@@ -22,21 +23,23 @@ body{
 #screen{
     margin-top: 2%;
     border: 2px #7f7f7f solid;
-    background-color: #000;
+    background-color: white;
     border-radius: 20px;
-    color: white;
-    font-size: 2.5vw;
+    color: black;
+    font-size: 350%;
     text-align: right;
     width: 95%;
     height: 15%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding: 10px;
 }
 
 #keyboard {
-    background-color: #000;
-    border: solid 1px red;
+    border: 2px #7f7f7f solid;
+    background-color: white;
+    border-radius: 20px;
     align-self: center;
     width: 95%;
     height: 70%;
@@ -46,10 +49,14 @@ body{
     justify-content: center;
     align-items: center;
     gap: 2%;
+    padding: 10px;
 }
 
 .buttonKeyboard { 
-    background-color: white;
+    font-size: 250%;
+    border: 2px #7f7f7f solid;
+    background-color: #e5e5e5;
+    border-radius: 10px;
     width: 23%; 
     height: 15%;
 }
