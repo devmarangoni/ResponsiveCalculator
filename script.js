@@ -30,7 +30,8 @@ const inserir = function(text) {
     const getState = calculateOn.getAttribute('id');
     if(getState === 'on') {
         const addTextOnScreen = document.getElementById('insert');
-        return addTextOnScreen.innerText = text;
+        const inScreen = addTextOnScreen.innerText += text;
+        return inScreen;
     } else if(getState === 'off') {
         throw new Error('A calculadora está desligada, experimente liga-la');
     } else {
@@ -39,14 +40,29 @@ const inserir = function(text) {
 }
 
 // Teclado
-const keyboard = document.getElementsByTagName('button');
-const getKeyboardKey = function (keyboard) {
-    for(let key of keyboard) {
-        console.log();
-    }
-}
+const num1 = document.getElementById('1');
+num1.addEventListener('click', () => {inserir(num1.getAttribute('id'))});
+const num2 = document.getElementById('2');
+num2.addEventListener('click', () => {inserir(num2.getAttribute('id'))});
+const num3 = document.getElementById('3');
+num3.addEventListener('click', () => {inserir(num3.getAttribute('id'))});
+const num4 = document.getElementById('4');
+num4.addEventListener('click', () => {inserir(num4.getAttribute('id'))});
+const num5 = document.getElementById('5');
+num5.addEventListener('click', () => {inserir(num5.getAttribute('id'))});
+const num6 = document.getElementById('6');
+num6.addEventListener('click', () => {inserir(num6.getAttribute('id'))});
+const num7 = document.getElementById('7');
+num7.addEventListener('click', () => {inserir(num7.getAttribute('id'))});
+const num8 = document.getElementById('8');
+num8.addEventListener('click', () => {inserir(num8.getAttribute('id'))});
+const num9 = document.getElementById('9');
+num9.addEventListener('click', () => {inserir(num9.getAttribute('id'))});
+const num0 = document.getElementById('0');
+num0.addEventListener('click', () => {inserir(num0.getAttribute('id'))});
 
-getKeyboardKey(keyboard);
+
+
 
 class Calculation {
     constructor(num1, num2, operator) {
