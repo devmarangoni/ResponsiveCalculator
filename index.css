@@ -20,7 +20,7 @@ body{
     align-items: center;
 }
 
-#screen{
+#screen-on {
     margin-top: 2%;
     border: 2px #7f7f7f solid;
     background-color: white;
@@ -36,7 +36,23 @@ body{
     padding: 10px;
 }
 
-#keyboard {
+#screen-off {
+    margin-top: 2%;
+    border: 2px #7f7f7f solid;
+    background-color: black;
+    border-radius: 20px;
+    color: black;
+    font-size: 350%;
+    text-align: right;
+    width: 95%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.keyboard {
     border: 2px #7f7f7f solid;
     background-color: white;
     border-radius: 20px;
@@ -59,4 +75,25 @@ body{
     border-radius: 10px;
     width: 23%; 
     height: 15%;
+}
+
+.buttonKeyboard:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#on{
+    background-color: #e5e5e5;
+    color: black;
+}
+
+#off {
+    background-color: black;
+    color: white;
+}
+
+#insert {
+    color: black;
+    font-size: 80%;
 }
