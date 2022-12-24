@@ -1,5 +1,5 @@
 class Calculation {
-    constructor(num1, num2, operator) {
+    constructor(num1, operator, num2 = '') {
         this.num1 = num1;
         this.num2 = num2;
         this.operator = operator;
@@ -94,12 +94,17 @@ class Screen {
         }
     }
 
-    getElementInScreen() {
+    getResult(screen) {
         const screenValue = document.getElementById('insert').innerText;
-        const arrFromScreenValue = screenValue.split(' ');
-        console.log(arrFromScreenValue);
+        const arrFromScreenValue = screenValue.replaceAll('.',' ').split(' ');
+        const num1 = Number(arrFromScreenValue[0]);
+        const operator = arrFromScreenValue[1];
+        const num2 = Number(arrFromScreenValue[2]);
+        const calculate = new Calculation(num1, operator, num2);
+        const result = String(calculate.calculate());
+        screen.apagar();
+        screen.inserir(result);
     }
-    
 }
 
 const screen = new Screen(document.getElementById('insert'));
@@ -130,15 +135,15 @@ const point = document.getElementById('point');
 point.addEventListener('click', () => screen.inserir("."))
 // operadores
 const division = document.getElementById('/');
-division.addEventListener('click', () => screen.inserir(" / "));
+division.addEventListener('click', () => screen.inserir("./."));
 const sum = document.getElementById('+');
-sum.addEventListener('click', () => screen.inserir(" + "));
+sum.addEventListener('click', () => screen.inserir(".+."));
 const sub = document.getElementById('-');
-sub.addEventListener('click', () => screen.inserir(" - "));
+sub.addEventListener('click', () => screen.inserir(".-."));
 const multi = document.getElementById('*');
-multi.addEventListener('click', () => screen.inserir(" * "));
+multi.addEventListener('click', () => screen.inserir(".*."));
 const porcent = document.getElementById('%');
-porcent.addEventListener('click', () => screen.inserir(" % "));
+porcent.addEventListener('click', () => screen.inserir(".%."));
 const clearAll = document.getElementById('c');
 clearAll.addEventListener('click', () => screen.apagar());
 const screenStates = document.getElementById('on');
@@ -146,4 +151,4 @@ screenStates.addEventListener('click', screen.offAndOn());
 const backspace = document.getElementById('ac');
 backspace.addEventListener('click', () => screen.apagarUmCaractere());
 const showResult = document.getElementById('=');
-showResult.addEventListener('click', () => screen.getElementInScreen());
+showResult.addEventListener('click', () => screen.getResult(screen));
