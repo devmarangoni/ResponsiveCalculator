@@ -101,7 +101,7 @@ class Screen {
 
     getResult(screen) {
         const screenValue = document.getElementById('insert-on').innerText;
-        const arrFromScreenValue = screenValue.replaceAll('.',' ').split(' ');
+        const arrFromScreenValue = screenValue.replaceAll("'",' ').split(' ');
         const num1 = Number(arrFromScreenValue[0]);
         const operator = arrFromScreenValue[1];
         const num2 = Number(arrFromScreenValue[2]);
@@ -140,15 +140,15 @@ const point = document.getElementById('point');
 point.addEventListener('click', () => screen.insert("."))
 // operadores
 const division = document.getElementById('/');
-division.addEventListener('click', () => screen.insert("./."));
+division.addEventListener('click', () => screen.insert("'/'"));
 const sum = document.getElementById('+');
-sum.addEventListener('click', () => screen.inserir(".+."));
+sum.addEventListener('click', () => screen.insert("'+'"));
 const subtraction = document.getElementById('-');
-subtraction.addEventListener('click', () => screen.insert(".-."));
+subtraction.addEventListener('click', () => screen.insert("'-'"));
 const multiplication = document.getElementById('*');
-multiplication.addEventListener('click', () => screen.insert(".*."));
+multiplication.addEventListener('click', () => screen.insert("'*'"));
 const porcentage = document.getElementById('%');
-porcentage.addEventListener('click', () => screen.insert(".%."));
+porcentage.addEventListener('click', () => screen.insert("'%'"));
 const clearAll = document.getElementById('c');
 clearAll.addEventListener('click', () => screen.delete());
 const screenStates = document.getElementById('on');
