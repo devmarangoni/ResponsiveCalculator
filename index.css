@@ -93,7 +93,12 @@ body{
     color: white;
 }
 
-#insert {
+#insert-on {
     color: black;
+    font-size: 80%;
+}
+
+#insert-off {
+    color: white;
     font-size: 80%;
 }

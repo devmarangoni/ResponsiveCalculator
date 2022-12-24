@@ -19,6 +19,9 @@ class Calculation {
             case "*":
                 return this.num1 * this.num2;
             break; 
+            case "%":
+                return this.num1 / 100;
+            break;
         }
     }
 
@@ -37,15 +40,17 @@ class Screen {
                 on.setAttribute('id','off');
                 const setScreen = document.getElementById('screen-on');
                 setScreen.setAttribute('id','screen-off');
-                const insert = document.getElementById('insert');
+                const insert = document.getElementById('insert-on');
                 insert.innerText = 'Calculadora Desligada';
+                insert.setAttribute('id','insert-off');
                 on.innerText = 'OFF';
             } else if(getState === 'off') {
                 on.setAttribute('id', 'on');
                 const setScreen = document.getElementById('screen-off');
                 setScreen.setAttribute('id', 'screen-on');
-                const insert = document.getElementById('insert');
+                const insert = document.getElementById('insert-off');
                 insert.innerText = ' ';
+                insert.setAttribute('id','insert-on');
                 on.innerText = 'ON'
             } else {
                 throw new Error('Você é incrivel, parabens por achar esse erro, tente F5 ou CTRL+R');
@@ -56,7 +61,7 @@ class Screen {
     inserir(text) {
         const getState = document.getElementById("on").getAttribute("id");
         if(getState === 'on') {
-            const addTextOnScreen = document.getElementById('insert');
+            const addTextOnScreen = document.getElementById('insert-on');
             const inScreen = addTextOnScreen.innerText += text;
             return inScreen;
         } else if(getState === 'off') {
@@ -69,7 +74,7 @@ class Screen {
     apagar() {
         const calculateOn = document.getElementById("on").getAttribute("id");
         if(calculateOn === "on") {
-            const removeTextOnScreen = document.getElementById('insert').innerText = '';
+            const removeTextOnScreen = document.getElementById('insert-on').innerText = '';
             return removeTextOnScreen;
         } else if(calculateOn === "off") {
             throw new Error('A calculadora está desligada, experimente liga-la');
@@ -82,9 +87,9 @@ class Screen {
         const calculateOn = document.getElementById("on");
         const getState = calculateOn.getAttribute("id");
         if(getState === "on") {
-            const removeTextOnScreen = document.getElementById('insert').innerText;
+            const removeTextOnScreen = document.getElementById('insert-on').innerText;
             const newInsert = removeTextOnScreen.substring(0, removeTextOnScreen.length - 1);
-            const screen = document.getElementById('insert');
+            const screen = document.getElementById('insert-on');
             const inScreen = screen.innerText = newInsert;
             return inScreen;
         } else if(getState === "off") {
@@ -95,19 +100,19 @@ class Screen {
     }
 
     getResult(screen) {
-        const screenValue = document.getElementById('insert').innerText;
+        const screenValue = document.getElementById('insert-on').innerText;
         const arrFromScreenValue = screenValue.replaceAll('.',' ').split(' ');
         const num1 = Number(arrFromScreenValue[0]);
         const operator = arrFromScreenValue[1];
         const num2 = Number(arrFromScreenValue[2]);
         const calculate = new Calculation(num1, operator, num2);
-        const result = String(calculate.calculate());
+        const result = calculate.calculate();
         screen.apagar();
         screen.inserir(result);
     }
 }
 
-const screen = new Screen(document.getElementById('insert'));
+const screen = new Screen(document.getElementById('insert-on'));
 
 
 // Teclado
