@@ -75,6 +75,7 @@ body{
     border-radius: 10px;
     width: 23%; 
     height: 15%;
+    font-weight: bold;
 }
 
 .buttonKeyboard:hover {
@@ -106,12 +107,23 @@ body{
 .num {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     height: 100%;
     width: 100%;
 }
 
 #dev {
     font-weight: bold;
-    font-size: 40%;
+    font-size: 30%;
+}
+
+#typeKeyboard {
+    width: 98%;
+    font-size: 200%;
+}
+
+#typeKeyboard:hover {
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    transform: scale(1.01);
 }

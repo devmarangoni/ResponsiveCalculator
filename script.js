@@ -75,7 +75,8 @@ class Screen {
         const calculateOn = document.getElementById("on").getAttribute("id");
         if(calculateOn === "on") {
             const removeTextOnScreen = document.getElementById('insert-on').innerText = '';
-            return removeTextOnScreen;
+            const removeLastOperation = document.getElementById('dev').innerText = '';
+            return removeTextOnScreen, removeLastOperation;
         } else if(calculateOn === "off") {
             throw new Error('Calculator is off, try turning it on');
         } else {
@@ -107,7 +108,9 @@ class Screen {
         const num2 = Number(arrFromScreenValue[2]);
         const calculate = new Calculation(num1, operator, num2);
         const result = calculate.calculate();
+        const LastOperation = document.getElementById('dev');
         screen.delete();
+        LastOperation.innerText = `last operation: ${screenValue}`;
         screen.insert(result);
     }
 }
@@ -115,7 +118,7 @@ class Screen {
 const screen = new Screen(document.getElementById('insert-on'));
 
 
-// Teclado
+// Utilizando com mouse
 const num1 = document.getElementById('1');
 num1.addEventListener('click', () => screen.insert("1"));
 const num2 = document.getElementById('2');
@@ -157,3 +160,63 @@ const backspace = document.getElementById('ac');
 backspace.addEventListener('click', () => screen.deleteACharactere());
 const showResult = document.getElementById('=');
 showResult.addEventListener('click', () => screen.getResult(screen));
+//Ultilizando com TECLADO
+const keyboard = document.getElementById('keyboard');
+keyboard.addEventListener("keydown", e => {
+    const keypressed = e.key;
+    switch(keypressed) {
+        case '1':
+            screen.insert("1");
+        break;
+        case '2':
+            screen.insert("2");
+        break;
+        case '3':
+            screen.insert("3");
+        break;
+        case '4':
+            screen.insert("4");
+        break;
+        case '5':
+            screen.insert("5");
+        break;
+        case '6':
+            screen.insert("6");
+        break;
+        case '7':
+            screen.insert("7");
+        break;
+        case '8':
+            screen.insert("8");
+        break;
+        case '9':
+            screen.insert("9");
+        break;
+        case '0':
+            screen.insert("0");
+        break;
+        case '/':
+            screen.insert("'/'");
+        break;
+        case '*':
+            screen.insert("'*'");
+        break;
+        case '-':
+            screen.insert("'-'");
+        break;
+        case '+':
+            screen.insert("'+'");
+        break;
+        case '%':
+            screen.insert("'%'");
+        break;
+        case 'Enter':
+            screen.getResult(screen);
+        break;
+        case 'Backspace':
+            screen.deleteACharactere();
+        break;
+        default:
+        break;
+    }
+});
