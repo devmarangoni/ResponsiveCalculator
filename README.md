@@ -46,3 +46,13 @@ $git clone https://github.com/devMRNGN/simulating-bank.git
       <div>
   </div>
 </html>
+
+## Responsividade
+
+<html>
+  <div>
+      <img src="https://images2.imgbox.com/13/a5/BAffBaT9_o.png" width="30%">
+      <img src="https://images2.imgbox.com/1f/6a/OniL7BgH_o.png" width="30%">
+      <img src="https://images2.imgbox.com/bf/72/vSoen64Y_o.png" width="30%">
+  </div>
+</html>
