@@ -9,6 +9,8 @@ Nessa calculadora foram utilizados conceitos como <strong>Programação Orientad
 * Operadores simples (+, -, /, *, %)
 * Opção de digitar com teclado 
 * Opção de digitar com click Mouse
+* Opção "Backspace" C
+* Opção "Clear All" C.A
 
 ## Instalação
 * Para Executar o projeto em sua maquina, basta ter algum compilador de codigo Javascript/Html: "Visual Studio Code" 
