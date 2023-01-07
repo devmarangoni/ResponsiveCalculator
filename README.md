@@ -41,7 +41,7 @@ $git clone https://github.com/devMRNGN/simulating-bank.git
         <img src="https://img.shields.io/badge/-Gmail-008080?style=for-the-badge&logo=Gmail" alt="Gmail LOGO" target="_blank">
       </a>
       <img src="https://img.shields.io/badge/-JavaScript-0D1117?style=for-the-badge&logo=javascript&labelColor=0D1117" alt="JS icon">
-      <img src="https://img.shields.io/badge/-CSS-fffff0?style=for-the-badge&logo=CSS3&labelColor=fffff0" alt="CSS icon">
+      <img src="https://img.shields.io/badge/-CSS-0D1117?style=for-the-badge&logo=CSS3&labelColor=0D1117" alt="CSS icon">
       <img src="https://img.shields.io/badge/-HTML-0D1117?style=for-the-badge&logo=HTML5&labelColor=0D1117" alt="HTML icon">
       <div>
   </div>
