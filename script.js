@@ -28,8 +28,9 @@ class Calculation {
 }
 
 class Screen {
-    constructor(screen){
+    constructor(screen, valorComAspas){
         this.screen = screen;
+        this.valorComAspas = valorComAspas;
     }
 
     offAndOn() {
@@ -60,11 +61,13 @@ class Screen {
 
     insert(text) {
         const getState = document.getElementById("on").getAttribute("id");
-        if(getState === 'on') {
+        if (getState === 'on') {
             const addTextOnScreen = document.getElementById('insert-on');
+            this.setValorSemAspas(this.valorComAspas += text);
             const inScreen = addTextOnScreen.innerText += text;
+            addTextOnScreen.innerText = this.formatOutput(inScreen);
             return inScreen;
-        } else if(getState === 'off') {
+        } else if (getState === 'off') {
             throw new Error('Calculator is off, try turning it on');
         } else {
             throw new Error('Unknown error');
@@ -102,7 +105,8 @@ class Screen {
 
     getResult(screen) {
         const screenValue = document.getElementById('insert-on').innerText;
-        const arrFromScreenValue = screenValue.replaceAll("'",' ').split(' ');
+        const arrFromScreenValue = this.getValorSemAspas().replaceAll("'",' ').split(' ');
+        this.setValorSemAspas('');
         const num1 = Number(arrFromScreenValue[0]);
         const operator = arrFromScreenValue[1];
         const num2 = Number(arrFromScreenValue[2]);
@@ -113,9 +117,21 @@ class Screen {
         LastOperation.innerText = `last operation: ${screenValue}`;
         screen.insert(result);
     }
+
+    formatOutput(text) {
+        return text.replace(/'/g, '');
+    }
+
+    setValorSemAspas(text){
+        this.valorComAspas = text;
+    }
+
+    getValorSemAspas(){
+        return this.valorComAspas;
+    }
 }
 
-const screen = new Screen(document.getElementById('insert-on'));
+const screen = new Screen(document.getElementById('insert-on'), '');
 
 
 // Utilizando com mouse
