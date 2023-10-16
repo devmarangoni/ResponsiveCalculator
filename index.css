@@ -71,11 +71,12 @@ body{
 .buttonKeyboard { 
     font-size: 250%;
     border: 2px #7f7f7f solid;
-    background-color: #e5e5e5;
+    background-color: rgb(115, 189, 72);
     border-radius: 10px;
     width: 23%; 
     height: 15%;
     font-weight: bold;
+    color: white;
 }
 
 .buttonKeyboard:hover {
@@ -85,8 +86,8 @@ body{
 }
 
 #on{
-    background-color: #e5e5e5;
-    color: black;
+    background-color: rgb(115, 189, 72);
+    color: white;
 }
 
 #off {
