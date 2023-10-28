@@ -79,6 +79,7 @@ class Screen {
         if(calculateOn === "on") {
             const removeTextOnScreen = document.getElementById('insert-on').innerText = '';
             const removeLastOperation = document.getElementById('dev').innerText = '';
+            this.valorComAspas = '';
             return removeTextOnScreen, removeLastOperation;
         } else if(calculateOn === "off") {
             throw new Error('Calculator is off, try turning it on');
